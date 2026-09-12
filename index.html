@@ -1,28 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kopi Nusa - Website UMKM</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <title>Kopi Nusa - UMKM Lokal Pekalongan</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
   <main class="page">
+    <!-- Bagian Banner Utama -->
     <section class="hero">
-        <p class="eyebrow">UMKM Peklongan</p>
+        <p class="eyebrow">UMKM Lokal Pekalongan</p>
         <h1>Kopi Nusa</h1>
-        <p>Kopi lokal pilihan teman belajar, bekerja, dan berdiskusi.</p>
-        <button id="promoButton" type="button">Lihat promo hari ini</button>
+        <p class="hero-desc">Kopi pilihan terbaik untuk menemani waktu belajar, bekerja, dan berdiskusi kamu setiap hari.</p>
+        <button id="promoButton" type="button">Lihat Promo Hari Ini</button>
     </section>
 
-    <section aria-labelledby="produk-title">
+    <!-- Bagian Daftar Produk -->
+    <section class="menu-section" aria-labelledby="produk-title">
         <h2 id="produk_title">Produk Unggulan</h2>
-        <ul class="products">
-            <li>Kopi Tubruk Signature - Rp18.000</li>
-            <li>Cold Brew Aren - Rp20.000</li>
-        </ul>
+        
+        <div class="product-grid">
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <h3>Kopi Tubruk Signature</h3>
+                <p class="price">Rp18.000</p>
+                <p class="desc">Racikan biji kopi pilihan khas nusantara dengan seduhan tradisional yang pekat, pas untuk pencinta kopi sejati.</p>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <h3>Cold Brew Aren</h3>
+                <p class="price">Rp20.000</p>
+                <p class="desc">Kopi seduh dingin yang disaring selama 12 jam, dipadu manisnya gula aren asli yang menyegarkan hari.</p>
+            </div>
+
+            <!-- Produk 3 (Tambahan Baru) -->
+            <div class="product-card">
+                <h3>Choco Regal creamy</h3>
+                <p class="price">Rp22.000</p>
+                <p class="desc">Perpaduan cokelat belgian rich dan susu segar dengan taburan biskuit Regal di atasnya. Cocok buat yang tidak minum kopi.</p>
+            </div>
+        </div>
     </section>
-   </main>
-   <script src="js/script.js"></script>     
+  </main>
+
+  <script src="js/script.js"></script>    
 </body>
 </html>
