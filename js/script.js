@@ -1,4 +1,4 @@
-// Menangani interaksi tombol promo
+﻿// Menangani interaksi tombol promo
 const promoButton = document.querySelector("#promoButton");
 
 promoButton.addEventListener("click", () => {
