@@ -14,11 +14,16 @@
 
     <header class="site-header">
         <nav class="nav" aria-label="Navigasi utama">
-            <a class="brand" href="index.html">Kopi Nusa</a>
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="assets/images/logo_kopi_nusa.webp" alt="Logo Kopi Nusa"/>
+                Kopi Nusa
+            </a>
             <ul>
                 <li><a aria-current="page" href="index.html">Beranda</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
                 <li><a href="index.html#kontak">Kontak</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
             </ul>
         </nav>
     </header>
@@ -30,7 +35,10 @@
             <h1 id="hero-title">Kopi Nusa</h1>
             <p>Kopi lokal pilihan untuk teman belajar, bekerja, dan berdiskusi.</p>
             <button id="promoButton" type="button">Lihat promo hari ini</button>
-            <img src="assets/images/etalase-kopi.webp" alt="Foto biji kopi" />
+            <figure>
+                <img src="assets/images/biji_kopi_nusa.webp" alt="Foto biji kopi" />
+                <figcaption class="sr-only">Biji kopi pilihan Kopi Nusa</figcaption>
+            </figure>
         </section>
 
         <section id="kontak" class="kontak-section" aria-labelledby="kontak-title">
@@ -53,8 +61,11 @@
 
             <div class="product-list">
                 <article class="product-card">
-                    <img class="product-photo" src="assets/images/kopi-tubruk.webp"
-                        alt="Segelas kopi tubruk panas" />
+                    <figure class="product-photo-figure">
+                        <img class="product-photo" src="assets/images/kopi_tubruk_signature.webp"
+                            alt="Segelas kopi tubruk panas" />
+                        <figcaption class="sr-only">Kopi Tubruk Signature</figcaption>
+                    </figure>
                     <div class="product-body">
                         <h3>Kopi Tubruk Signature</h3>
                         <p class="desc">Racikan biji kopi pilihan khas nusantara dengan seduhan tradisional yang
@@ -64,8 +75,11 @@
                 </article>
 
                 <article class="product-card">
-                    <img class="product-photo" src="assets/images/cold_brew_coffee.webp"
-                        alt="Segelas cold brew" />
+                    <figure class="product-photo-figure">
+                        <img class="product-photo" src="assets/images/cold_brew_aren.webp"
+                            alt="Segelas cold brew aren" />
+                        <figcaption class="sr-only">Cold Brew Aren</figcaption>
+                    </figure>
                     <div class="product-body">
                         <h3>Cold Brew Aren</h3>
                         <p class="desc">Kopi seduh dingin yang disaring selama 12 jam, dipadu manisnya gula aren asli
@@ -75,8 +89,11 @@
                 </article>
 
                 <article class="product-card">
-                    <img class="product-photo" src="assets/images/choco-regal.webp"
-                        alt="Segelas choco regal creamy" />
+                    <figure class="product-photo-figure">
+                        <img class="product-photo" src="assets/images/choco_regal.webp"
+                            alt="Segelas choco regal creamy" />
+                        <figcaption class="sr-only">Choco Regal Creamy</figcaption>
+                    </figure>
                     <div class="product-body">
                         <h3>Choco Regal Creamy</h3>
                         <p class="desc">Perpaduan coklat belgian rich dan susu segar dengan taburan biskuit Regal
@@ -84,17 +101,33 @@
                         <p class="price">Rp20.000</p>
                     </div>
                 </article>
+
+                <article class="product-card">
+                    <figure class="product-photo-figure">
+                        <img class="product-photo" src="assets/images/kopi_susu_aren.webp"
+                            alt="Segelas kopi susu gula aren dengan es" />
+                        <figcaption class="sr-only">Kopi Susu Gula Aren</figcaption>
+                    </figure>
+                    <div class="product-body">
+                        <span class="badge-baru">Baru</span>
+                        <h3>Kopi Susu Gula Aren</h3>
+                        <p class="desc">Perpaduan espresso, susu segar, dan gula aren asli, disajikan dingin dan
+                            menyegarkan sepanjang hari.</p>
+                        <p class="price">Rp25.000</p>
+                    </div>
+                </article>
             </div>
         </section>
 
-<aside class="tips-section" role="complementary" aria-labelledby="tips-title">
-    <h2 id="tips-title">Tips untuk Kamu yang Baru Coba Kopi</h2>
+        <aside class="tips-section" role="complementary" aria-labelledby="tips-title">
+            <h2 id="tips-title">Tips untuk Kamu yang Baru Coba Kopi</h2>
 
-    <div class="tips-box">
-        <span class="tips-icon" aria-hidden="true"></span>
-        <p>Mulai dari <strong>Cold Brew Aren</strong> rasanya lebih ringan dan manis alami dari gula aren, cocok untuk lidah yang belum terbiasa dengan kopi pekat.</p>
-    </div>
-</aside>
+            <div class="tips-box">
+                <span class="tips-icon" aria-hidden="true"></span>
+                <p>Mulai dari <strong>Cold Brew Aren</strong> rasanya lebih ringan dan manis alami dari gula aren, cocok
+                    untuk lidah yang belum terbiasa dengan kopi pekat.</p>
+            </div>
+        </aside>
     </main>
 
     <footer class="site-footer">
