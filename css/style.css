@@ -1,5 +1,4 @@
 ﻿:root {
-  /* --- Primitive: warna dasar --- */
   --color-primary: #6f3b1f;
   --color-primary-strong: #4b2715;
   --color-text: #2f2118;
@@ -7,21 +6,17 @@
   --color-surface: #ffffff;
   --color-surface-soft: #d7cabb;
   --color-border: #dccbbc;
-
-  /* --- Primitive: warna baru untuk aksen & interaksi --- */
   --color-amber-500: #ffd166;
   --color-amber-600: #f2b73d;
   --color-rust-700: #8a3b12;
   --color-blue-700: #1d4ed8;
-
-  /* --- Semantic tokens: WARNA --- */
   --color-brand-primary: var(--color-primary);
   --color-text-accent: var(--color-rust-700);
+  --color-nav-active: var(--color-primary);
+  --color-eyebrow: var(--color-rust-700);
   --color-bg-interactive: var(--color-amber-500);
   --color-bg-interactive-hover: var(--color-amber-600);
   --color-border-focus: var(--color-blue-700);
-
-  /* --- Semantic tokens: SPACING --- */
   --space-1: 0.5rem;
   --space-2: 0.75rem;
   --space-3: 1rem;
@@ -29,18 +24,12 @@
   --space-5: 2rem;
   --spacing-sm: var(--space-2);
   --spacing-md: var(--space-4);
-
-  /* --- Semantic tokens: RADIUS --- */
   --radius-sm: 0.5rem;
   --radius-md: 0.875rem;
   --radius-lg: 1.5rem;
-
   --shadow-card: 0 0.5rem 1.5rem rgb(47 33 24 / 0.1);
 }
 
-/* =========================================================
-   2. BASE
-   ========================================================= */
 *,
 *::before,
 *::after {
@@ -60,46 +49,16 @@ body {
   line-height: 1.6;
 }
 
-.page {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 32px 20px;
-}
-
-.page-hero {
-  margin-bottom: var(--spacing-md);
-}
-
-.eyebrow {
-  margin: 0 0 8px;
-  color: var(--color-text-accent);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.hero {
-  padding: 36px;
-  color: white;
-  background: var(--color-brand-primary);
-  border-radius: var(--radius-lg);
-}
-
-.products {
-  padding-left: 1.2rem;
-}
-
 img {
   max-width: 100%;
   height: auto;
 }
 
 figure {
-  margin: 0 0 24px;
+  margin: 0;
 }
 
 figcaption {
-  margin-top: 8px;
   color: var(--color-muted);
 }
 
@@ -115,36 +74,39 @@ figcaption {
   border: 0;
 }
 
-/* =========================================================
-   3. HEADER & NAVIGASI
-   ========================================================= */
 .skip-link {
   position: absolute;
   left: -9999px;
-  padding: 8px 12px;
+  padding: var(--space-1) var(--space-2);
   color: white;
   background: var(--color-text);
 }
 
 .skip-link:focus {
-  top: 8px;
-  left: 8px;
+  top: var(--space-1);
+  left: var(--space-1);
 }
 
 .site-header {
-  padding: 16px 20px;
+  padding: var(--space-3) var(--space-4);
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
 }
 
 .nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
   max-width: 920px;
   margin: 0 auto;
 }
 
 .brand {
-  display: inline-block;
-  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
   color: var(--color-primary-strong);
   font-weight: 800;
   text-decoration: none;
@@ -152,41 +114,103 @@ figcaption {
 
 .brand-logo {
   height: 28px;
-  vertical-align: middle;
-  margin-right: 8px;
 }
 
 .nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.nav li {
-  display: inline-block;
-  margin-right: 12px;
-}
-
 .nav a[aria-current="page"] {
   font-weight: 800;
-  color: var(--color-text-accent);
+  color: var(--color-nav-active);
 }
 
-.site-footer {
-  padding: 24px 20px;
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 920px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+:where(.page > section, .page > aside) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+:where(.page > section, .page > aside)>* {
+  margin: 0;
+}
+
+.page section>ul {
+  padding-left: var(--space-4);
+}
+
+.page-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.page-hero>* {
+  margin: 0;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: center;
+  padding: var(--space-5);
   color: white;
-  text-align: center;
-  background: var(--color-text);
+  background: var(--color-brand-primary);
+  border-radius: var(--radius-lg);
 }
 
-/* =========================================================
-   4. TOMBOL
-   ========================================================= */
+.hero .eyebrow {
+  color: #ffffff;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.hero-content>* {
+  margin: 0;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
 button {
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-md);
-  margin: 0 0 var(--spacing-md);
+  margin: 0;
   color: var(--color-text);
+  font: inherit;
   font-weight: 700;
   cursor: pointer;
   background: var(--color-bg-interactive);
@@ -199,13 +223,25 @@ button:hover {
   background: var(--color-bg-interactive-hover);
 }
 
-.is-promo-active {
-  background: var(--color-brand-primary);
+button.button-secondary {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+button.button-secondary:hover {
+  background: var(--color-surface-soft);
+}
+
+button.is-promo-active,
+button.is-promo-active:hover {
   color: white;
+  background: var(--color-primary-strong);
+  box-shadow: inset 0 0 0 0.125rem var(--color-surface);
 }
 
 .kontak-link {
   display: inline-block;
+  flex: none;
   padding: var(--spacing-sm) var(--spacing-md);
   color: var(--color-text);
   font-weight: 700;
@@ -218,10 +254,10 @@ button:hover {
   background: var(--color-bg-interactive-hover);
 }
 
-/* =========================================================
-   5. KARTU: PRODUK & MEDIA
-   ========================================================= */
-.product-list {
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
   padding: 0;
   margin: 0;
   list-style: none;
@@ -229,9 +265,11 @@ button:hover {
 
 .product-card,
 .media-card {
-  display: block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
   padding: var(--spacing-md);
-  margin: 0 0 var(--spacing-md);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -239,16 +277,32 @@ button:hover {
 }
 
 .product-photo-figure {
-  margin: 0 0 var(--spacing-sm);
+  margin: 0;
+}
+
+.product-photo,
+.media-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.product-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
 .product-body h3 {
-  margin: 0 0 4px;
+  margin: 0;
   color: var(--color-primary-strong);
 }
 
 .product-body .desc {
-  margin: 0 0 8px;
+  margin: 0;
   color: var(--color-muted);
 }
 
@@ -258,48 +312,96 @@ button:hover {
   font-weight: 800;
 }
 
-.gallery-list {
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.card-actions a {
+  flex: 1 1 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--color-text);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  background: var(--color-bg-interactive);
+  border: 1px solid var(--color-bg-interactive);
+  border-radius: var(--radius-lg);
+}
+
+.card-actions a:hover {
+  background: var(--color-bg-interactive-hover);
+  border-color: var(--color-bg-interactive-hover);
+}
+
+.card-actions a.action-secondary {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.card-actions a.action-secondary:hover {
+  background: var(--color-surface-soft);
+}
+
+.product-badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-surface);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  background: var(--color-text-accent);
+  border-radius: var(--radius-sm);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.media-card {
+  gap: var(--space-2);
 }
 
 .media-card figcaption {
   color: var(--color-muted);
 }
 
-/* =========================================================
-   6. BADGE
-   ========================================================= */
-.badge-baru {
-  display: inline-block;
-  padding: 2px 10px;
-  margin-bottom: 8px;
-  color: var(--color-surface);
-  font-size: 0.8rem;
-  font-weight: 700;
-  background: var(--color-text-accent);
-  border-radius: var(--radius-sm);
+audio {
+  width: 100%;
 }
 
-/* =========================================================
-   7. KONTAK & TIPS
-   ========================================================= */
-.kontak-section,
-.tips-section {
-  margin-top: var(--spacing-md);
-}
 
 .kontak-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
   padding: var(--spacing-md);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
 }
 
-.kontak-info p {
-  margin: 0 0 8px;
+.kontak-info {
+  display: flex;
+  flex: 1 1 16rem;
+  flex-direction: column;
+  gap: var(--space-1);
 }
+
+.kontak-info p {
+  margin: 0;
+}
+
 
 .tips-box {
   padding: var(--spacing-md);
@@ -308,19 +410,26 @@ button:hover {
   border-radius: var(--radius-sm);
 }
 
-/* =========================================================
-   8. FORM (kontak.html)
-   ========================================================= */
+.tips-box p {
+  margin: 0;
+}
+
+#form-kontak {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
 .field {
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
 .field label {
   display: block;
-  margin-bottom: 6px;
 }
 
-/* Input Teks, Select, dan Textarea (Width 100%) */
 .field input:not([type="checkbox"]):not([type="radio"]),
 .field select,
 .field textarea {
@@ -333,74 +442,87 @@ button:hover {
   border-radius: var(--radius-sm);
 }
 
-/* Khusus Radio & Checkbox (Width Auto) */
 .field input[type="checkbox"],
 .field input[type="radio"] {
   width: auto;
-  margin-right: 8px;
-  vertical-align: middle;
   cursor: pointer;
 }
 
 .field-hint {
-  margin: 6px 0 0;
+  margin: 0;
   color: var(--color-muted);
   font-size: 0.875rem;
 }
 
 fieldset.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
   padding: var(--spacing-sm) var(--spacing-md);
-  margin: 0 0 16px;
+  margin: 0;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
 }
 
 .field-group legend {
-  padding: 0 6px;
+  padding: 0 var(--space-1);
   font-weight: 700;
 }
 
 .field-group label {
-  display: block;
-  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
 }
 
-.preview-section {
-  margin-top: var(--spacing-md);
+fieldset.field-group.field-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-1) var(--space-4);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 #preview-form {
-  padding: 16px;
+  padding: var(--space-3);
+  margin: 0;
   white-space: pre-wrap;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
 }
 
-/* =========================================================
-   9. TABEL (produk.html)
-   ========================================================= */
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
 caption {
-  margin-bottom: 8px;
+  padding-bottom: var(--space-1);
   font-weight: 700;
   text-align: left;
 }
 
 th,
 td {
-  padding: 10px;
+  padding: var(--space-2);
   text-align: left;
   border: 1px solid var(--color-border);
 }
 
-/* =========================================================
-   10. FOCUS INDICATOR
-   ========================================================= */
+.site-footer {
+  padding: var(--space-4) var(--space-4);
+  color: white;
+  text-align: center;
+  background: var(--color-text);
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
