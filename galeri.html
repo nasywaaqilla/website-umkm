@@ -1,19 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeri Kopi Nusa - Website UMKM</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/logo_kopi_nusa.webp" type="image/webp">
 </head>
 
 <body>
+
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+
     <header class="site-header">
         <nav class="nav" aria-label="Navigasi utama">
             <a class="brand" href="index.html">
-                <img class="brand-logo" src="assets/images/logo_kopi_nusa.webp" alt="Logo Kopi Nusa" />
+                <img class="brand-logo" src="assets/images/logo_kopi_nusa.webp" width="28" height="28"
+                    alt="Logo Kopi Nusa" />
                 Kopi Nusa
             </a>
             <ul>
@@ -25,22 +29,29 @@
             </ul>
         </nav>
     </header>
+
     <main id="konten" class="page">
-        <section class="page-hero" aria-labelledby="galeri-page-title">
-            <p class="eyebrow">Dokumentasi Kami</p>
-            <h1 id="galeri-page-title">Galeri Kopi Nusa</h1>
-            <p>Dokumentasi produk dan aktivitas seduh di kedai, mulai dari etalase hingga proses penyajian.</p>
+        <section class="hero" aria-labelledby="galeri-page-title">
+            <div class="hero-content">
+                <p class="eyebrow">Dokumentasi Kami</p>
+                <h1 id="galeri-page-title">Galeri Kopi Nusa</h1>
+                <p>Dokumentasi produk dan aktivitas seduh di kedai, mulai dari etalase hingga proses penyajian.</p>
+            </div>
+            <img class="hero-image" src="assets/images/suasana_kopi_nusa.webp" width="640" height="480"
+                alt="Suasana Kedai Kopi Nusa" />
         </section>
 
         <section aria-labelledby="media-title">
-            <h2 id="media-title">Suasana Kedai</h2>
+            <h2 id="media-title">Profil Kopi Nusa</h2>
             <div class="gallery-grid">
                 <figure class="media-card">
-                    <img src="assets/images/etalase_kopi_nusa.webp" alt="Etalase Kopi Nusa berisi kemasan kopi lokal" />
+                    <img src="assets/images/etalase_kopi_nusa.webp" width="640" height="480" loading="lazy"
+                        alt="Etalase Kopi Nusa berisi kemasan kopi lokal" />
                     <figcaption>Etalase produk membantu pelanggan mengenali pilihan kopi.</figcaption>
                 </figure>
                 <figure class="media-card">
-                    <img src="assets/images/barista_menyeduh.webp" alt="Barista menuang air panas ke dripper kopi" />
+                    <img src="assets/images/barista_menyeduh.webp" width="640" height="480" loading="lazy"
+                        alt="Barista menuang air panas ke dripper kopi" />
                     <figcaption>Proses seduh manual menjadi bagian dari cerita produk.</figcaption>
                 </figure>
             </div>
@@ -53,6 +64,7 @@
             </audio>
         </section>
     </main>
+
     <footer class="site-footer">
         <p>&copy; 2026 Kopi Nusa. Data pada halaman ini bersifat dummy.</p>
     </footer>

@@ -1,19 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk Kopi Nusa - Website UMKM</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/logo_kopi_nusa.webp" type="image/webp">
 </head>
 
 <body>
+
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+
     <header class="site-header">
         <nav class="nav" aria-label="Navigasi utama">
             <a class="brand" href="index.html">
-                <img class="brand-logo" src="assets/images/logo_kopi_nusa.webp" alt="Logo Kopi Nusa" />
+                <img class="brand-logo" src="assets/images/logo_kopi_nusa.webp" width="28" height="28"
+                    alt="Logo Kopi Nusa" />
                 Kopi Nusa
             </a>
             <ul>
@@ -25,9 +29,10 @@
             </ul>
         </nav>
     </header>
+
     <main id="konten" class="page">
         <section class="page-hero" aria-labelledby="produk-page-title">
-            <p class="eyebrow">Menu & Harga</p>
+            <p class="eyebrow">Menu &amp; Harga</p>
             <h1 id="produk-page-title">Produk Kopi Nusa</h1>
             <p>Pilih produk sesuai kebutuhan seduh harian, kantor, atau hadiah.</p>
         </section>
@@ -47,20 +52,21 @@
             <div class="gallery-grid">
                 <figure class="media-card">
                     <span class="product-badge">Best Seller</span>
-                    <img src="assets/images/kopi_tubruk_signature.webp"
+                    <img width="640" height="480" loading="lazy" src="assets/images/kopi_tubruk_signature.webp"
                         alt="Segelas kopi tubruk panas dengan ampas kopi mengendap di dasar cangkir" />
                     <figcaption>Kopi Tubruk Signature — racikan biji kopi pilihan khas nusantara dengan seduhan
                         tradisional yang pekat, disajikan dalam gelas 250 ml seharga Rp18.000.</figcaption>
                 </figure>
 
                 <figure class="media-card">
-                    <img src="assets/images/cold_brew_aren.webp" alt="Segelas cold brew kopi dengan es batu" />
+                    <img width="640" height="480" loading="lazy" src="assets/images/cold_brew_aren.webp"
+                        alt="Segelas cold brew kopi dengan es batu" />
                     <figcaption>Cold Brew Aren — kopi seduh dingin yang disaring 12 jam, dipadu gula aren asli,
                         disajikan dalam gelas 250 ml seharga Rp22.000.</figcaption>
                 </figure>
 
                 <figure class="media-card">
-                    <img src="assets/images/choco_regal.webp"
+                    <img width="640" height="480" loading="lazy" src="assets/images/choco_regal.webp"
                         alt="Segelas choco regal creamy dengan taburan biskuit Regal di atasnya" />
                     <figcaption>Choco Regal Creamy — coklat belgian rich dan susu segar dengan taburan biskuit
                         Regal, disajikan dalam gelas 250 ml seharga Rp20.000.</figcaption>
@@ -68,8 +74,8 @@
 
                 <figure class="media-card">
                     <span class="product-badge">Baru</span>
-                    <img src="assets/images/kopi_susu_aren.webp"
-                        alt="Seglas kopi susu gula aren dengan lapisan gula aren di dasar gelas" />
+                    <img width="640" height="480" loading="lazy" src="assets/images/kopi_susu_aren.webp"
+                        alt="Segelas kopi susu gula aren dengan lapisan gula aren di dasar gelas" />
                     <figcaption>Kopi Susu Gula Aren (menu terbaru) — memadukan espresso, susu segar, dan gula
                         aren asli, disajikan dalam gelas 250 ml seharga Rp25.000.</figcaption>
                 </figure>
@@ -78,40 +84,43 @@
 
         <section aria-labelledby="harga-title">
             <h2 id="harga-title">Daftar Harga</h2>
-            <table>
-                <caption>Daftar harga produk Kopi Nusa</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Produk</th>
-                        <th scope="col">Ukuran</th>
-                        <th scope="col">Harga</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Kopi Tubruk Signature</th>
-                        <td>Gelas 250 ml</td>
-                        <td>Rp18.000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Cold Brew Aren</th>
-                        <td>Gelas 250 ml</td>
-                        <td>Rp22.000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Choco Regal Creamy</th>
-                        <td>Gelas 250 ml</td>
-                        <td>Rp20.000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Kopi Susu Gula Aren</th>
-                        <td>Gelas 250 ml</td>
-                        <td>Rp25.000</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-scroll" role="region" aria-labelledby="harga-caption" tabindex="0">
+                <table>
+                    <caption id="harga-caption">Daftar harga produk Kopi Nusa</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Produk</th>
+                            <th scope="col">Ukuran</th>
+                            <th scope="col">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Kopi Tubruk Signature</th>
+                            <td>Gelas 250 ml</td>
+                            <td>Rp18.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cold Brew Aren</th>
+                            <td>Gelas 250 ml</td>
+                            <td>Rp22.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Choco Regal Creamy</th>
+                            <td>Gelas 250 ml</td>
+                            <td>Rp20.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kopi Susu Gula Aren</th>
+                            <td>Gelas 250 ml</td>
+                            <td>Rp25.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
+
     <footer class="site-footer">
         <p>&copy; 2026 Kopi Nusa. Data pada halaman ini bersifat dummy.</p>
     </footer>
