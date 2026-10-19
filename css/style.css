@@ -114,9 +114,10 @@ figcaption {
 
 .nav {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
   gap: var(--space-2);
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   width: min(100%, 920px);
   margin: 0 auto;
 }
@@ -137,6 +138,7 @@ figcaption {
 
 .nav ul {
   display: flex;
+  flex: 1 0 100%;
   flex-direction: row;
   flex-wrap: wrap;
   gap: var(--space-1) var(--space-2);
@@ -144,6 +146,72 @@ figcaption {
   margin: 0;
   line-height: 1.4;
   list-style: none;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: var(--space-1);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.nav-toggle:hover {
+  background: var(--color-surface-soft);
+}
+
+.nav-toggle-icon,
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: var(--color-primary-strong);
+  border-radius: 1px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-toggle-icon {
+  position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.nav-toggle-icon::before {
+  transform: translateY(-0.375rem);
+}
+
+.nav-toggle-icon::after {
+  transform: translateY(0.375rem);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+  transform: rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle-icon,
+  .nav-toggle-icon::before,
+  .nav-toggle-icon::after {
+    transition: none;
+  }
 }
 
 .nav a[aria-current="page"] {
@@ -571,6 +639,28 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
+/* Hamburger menu: hanya di bawah 48rem dan hanya jika JavaScript aktif */
+@media (max-width: 47.99rem) {
+  .nav-js .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-js ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-js:not(.is-open) ul {
+    display: none;
+  }
+
+  .nav-js ul a {
+    display: block;
+    padding: var(--space-2) 0;
+    border-top: 1px solid var(--color-border);
+  }
+}
+
 @media (min-width: 42rem) {
   .nav {
     gap: var(--space-3);
@@ -586,6 +676,16 @@ textarea:focus-visible {
 }
 
 @media (min-width: 48rem) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .nav ul {
+    flex: 0 1 auto;
+  }
+
   .hero {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
   }
