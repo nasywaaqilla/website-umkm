@@ -18,7 +18,6 @@ form.addEventListener("submit", (event) => {
   ].join("\n");
 });
 
-// Tombol Reset Form (.form-actions) juga mengosongkan preview
 form.addEventListener("reset", () => {
   preview.textContent = previewDefault;
 });

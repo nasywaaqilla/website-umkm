@@ -7,6 +7,8 @@
     <title>Produk Kopi Nusa - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/images/logo_kopi_nusa.webp" type="image/webp">
+    <script src="js/script.js" defer></script>
+    <script src="js/app.js" defer></script>
 </head>
 
 <body>
@@ -39,6 +41,15 @@
             <p class="eyebrow">Menu &amp; Harga</p>
             <h1 id="produk-page-title">Produk Kopi Nusa</h1>
             <p>Pilih produk sesuai kebutuhan seduh harian, kantor, atau hadiah.</p>
+        </section>
+
+        <section class="section" aria-labelledby="produk-dinamis-title">
+            <div class="section-header">
+                <p class="eyebrow">Data JavaScript</p>
+                <h2 id="produk-dinamis-title">Stok Produk Kami</h2>
+                <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
+            </div>
+            <div id="produk-dinamis" class="js-product-grid"></div>
         </section>
 
         <section aria-labelledby="kategori-title">
@@ -90,7 +101,7 @@
             <h2 id="harga-title">Daftar Harga</h2>
             <div class="table-scroll" role="region" aria-labelledby="harga-caption" tabindex="0">
                 <table>
-                    <caption id="harga-caption">Daftar harga produk Kopi Nusa</caption>
+                    <caption id="harga-caption">Daftar harga normal produk Kopi Nusa</caption>
                     <thead>
                         <tr>
                             <th scope="col">Produk</th>
@@ -129,7 +140,6 @@
         <p>&copy; 2026 Kopi Nusa. Data pada halaman ini bersifat dummy.</p>
     </footer>
 
-    <script src="js/script.js"></script>
 </body>
 
 </html>
