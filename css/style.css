@@ -495,7 +495,6 @@ audio {
   margin: 0;
 }
 
-
 .tips-box {
   padding: var(--spacing-md);
   background: var(--color-surface-soft);
@@ -780,4 +779,9 @@ textarea:focus-visible {
   font-weight: 700;
   background: #fee2e2;
   border-radius: var(--radius-sm);
+}
+
+#produk-unggulan {
+  font-weight: 700;
+  color: var(--color-primary, #6f3b1f);
 }
