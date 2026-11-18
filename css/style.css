@@ -785,3 +785,78 @@ textarea:focus-visible {
   font-weight: 700;
   color: var(--color-primary, #6f3b1f);
 }
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.filter-button {
+  border: 1px solid var(--color-border, #dccbbc);
+  border-radius: 999px;
+  background: var(--color-surface, #ffffff);
+  color: var(--color-text, #2f2118);
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button:focus-visible {
+  border-color: var(--color-primary, #6f3b1f);
+  outline: 3px solid rgb(111 59 31 / 20%);
+  outline-offset: 2px;
+}
+
+.filter-button.is-active {
+  background: var(--color-primary, #6f3b1f);
+  border-color: var(--color-primary, #6f3b1f);
+  color: var(--color-surface, #ffffff);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  border: 1px dashed var(--color-border, #dccbbc);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: var(--color-surface, #ffffff);
+  color: var(--color-muted, #6b5b52);
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.section-heading > * {
+  margin: 0;
+}
+
+.produk-status {
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.filter-button:not(.is-active):hover {
+  background: var(--color-surface-soft);
+}
+
+.category-note {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.product-card .ghost-button {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.875rem;
+}
+
+.product-card .stock-badge {
+  align-self: flex-start;
+  margin-block-start: 0;
+}
