@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/images/logo_kopi_nusa.webp" type="image/webp">
     <script src="js/form.js" defer></script>
-     <script src="js/script.js" defer></script>
+    <script src="js/newsletter.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 
-<body>
+<body class="halaman-kontak">
 
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
 
     <header class="site-header">
         <nav class="nav" aria-label="Navigasi utama">
             <a class="brand" href="index.html">
-                <img class="brand-logo" src="assets/images/logo_kopi_nusa.webp" width="28" height="28" alt="Logo Kopi Nusa" />
+                <img class="brand-logo" src="assets/images/logo_kopi_nusa.webp" width="28" height="28"
+                    alt="Logo Kopi Nusa" />
                 Kopi Nusa
             </a>
             <button class="nav-toggle" type="button" aria-controls="menu-utama" aria-expanded="false">
@@ -35,80 +37,155 @@
         </nav>
     </header>
 
-    <main id="konten" class="page">
+    <main id="konten" class="page page-kontak">
         <section class="page-hero" aria-labelledby="kontak-title">
             <p class="eyebrow">Hubungi Kami</p>
             <h1 id="kontak-title">Kontak Kopi Nusa</h1>
             <p>Silakan kirim pertanyaan tentang produk, pesanan, atau kerja sama. Tim kami akan merespons secepatnya.</p>
         </section>
 
-        <form id="form-kontak" action="#" method="post">
-            <div class="field">
-                <label for="nama">Nama lengkap</label>
-                <input id="nama" name="nama" type="text" autocomplete="name" required minlength="3" />
+        <div class="kontak-layout">
+
+            <form id="form-kontak" action="#" method="post" novalidate aria-label="Form kontak Kopi Nusa">
+                <p class="form-intro">Semua kolom wajib diisi, kecuali Nomor WhatsApp dan Waktu kontak.</p>
+                <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label for="nama">Nama lengkap</label>
+                        <input id="nama" name="nama" type="text" autocomplete="name" required minlength="3"
+                            aria-describedby="nama-error" />
+                        <p id="nama-error" class="field-error" aria-live="polite"></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required
+                            aria-describedby="email-error" />
+                        <p id="email-error" class="field-error" aria-live="polite"></p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label for="telepon">Nomor WhatsApp</label>
+                        <input id="telepon" name="telepon" type="tel" autocomplete="tel" inputmode="numeric"
+                            pattern="0[0-9]{9,12}" title="Awali dengan 0, 10-13 digit, tanpa spasi atau tanda hubung"
+                            placeholder="081234567890" aria-describedby="telepon-hint telepon-error" />
+                        <p id="telepon-hint" class="field-hint">
+                            Opsional. Isi tanpa spasi atau tanda hubung, contoh: 081234567890.
+                        </p>
+                        <p id="telepon-error" class="field-error" aria-live="polite"></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="paket">Paket yang diminati</label>
+                        <select id="paket" name="paket" required aria-describedby="paket-error">
+                            <option value="">Pilih salah satu</option>
+                            <option value="rumahan">Paket rumahan</option>
+                            <option value="kantor">Paket kantor</option>
+                            <option value="reseller">Paket reseller</option>
+                        </select>
+                        <p id="paket-error" class="field-error" aria-live="polite"></p>
+                    </div>
+                </div>
+
+                <fieldset class="field-group">
+                    <legend>Waktu kontak yang diinginkan</legend>
+                    <div class="option-list">
+                        <label><input type="radio" name="waktu" value="kapan-saja" checked /> Kapan saja</label>
+                        <label><input type="radio" name="waktu" value="pagi" /> Pagi (08.00 - 11.00)</label>
+                        <label><input type="radio" name="waktu" value="siang" /> Siang (11.00 - 15.00)</label>
+                        <label><input type="radio" name="waktu" value="sore" /> Sore (15.00 - 18.00)</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="field-group" aria-describedby="topik-error">
+                    <legend>Topik pertanyaan</legend>
+                    <div class="option-list">
+                        <label><input type="radio" name="topik" value="produk" required
+                                aria-describedby="topik-error" /> Informasi produk</label>
+                        <label><input type="radio" name="topik" value="pesanan"
+                                aria-describedby="topik-error" /> Status pesanan</label>
+                        <label><input type="radio" name="topik" value="kerja-sama"
+                                aria-describedby="topik-error" /> Kerja sama</label>
+                    </div>
+                    <p id="topik-error" class="field-error" aria-live="polite"></p>
+                </fieldset>
+
+                <div class="field">
+                    <label for="pesan">Pesan</label>
+                    <textarea id="pesan" name="pesan" rows="5" required minlength="20"
+                        aria-describedby="pesan-hint pesan-error"></textarea>
+                    <p id="pesan-hint" class="field-hint">Minimal 20 karakter.</p>
+                    <p id="pesan-error" class="field-error" aria-live="polite"></p>
+                </div>
+
+                <div class="field">
+                    <label for="setuju">
+                        <input id="setuju" name="setuju" type="checkbox" value="ya" required
+                            aria-describedby="setuju-error" />
+                        Saya setuju data dummy yang diisi boleh ditampilkan pada bagian preview.
+                    </label>
+                    <p id="setuju-error" class="field-error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Tampilkan Preview</button>
+                    <button type="reset" class="button-secondary">Reset Form</button>
+                </div>
+            </form>
+
+            <div class="kontak-sidebar">
+                <section class="side-card" aria-labelledby="info-title">
+                    <h2 id="info-title">Info Cepat</h2>
+                    <dl class="info-list">
+                        <div>
+                            <dt>Alamat Kedai</dt>
+                            <dd>Jalan Diponegoro No.45, Kedungwuni, Kabupaten Pekalongan</dd>
+                        </div>
+                        <div>
+                            <dt>Jam Layanan</dt>
+                            <dd>Senin - Jumat 07.00 - 21.00 WIB<br>Sabtu - Minggu 08.00 - 22.00 WIB</dd>
+                        </div>
+                        <div>
+                            <dt>WhatsApp</dt>
+                            <dd><a href="https://wa.me/6281234567890">Hubungi Kopi Nusa</a></dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <section class="side-card" aria-labelledby="preview-title">
+                    <h2 id="preview-title">Preview Data</h2>
+                    <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol dikirim.</pre>
+                </section>
+
+                <aside class="side-card preferensi-panel" aria-labelledby="preferensi-title">
+                    <h2 id="preferensi-title">Preferensi Tersimpan</h2>
+                    <p id="preferensi-status" aria-live="polite">Belum ada preferensi kontak yang tersimpan di browser ini.</p>
+                    <p class="field-hint">
+                        Hanya pilihan paket, topik, dan waktu kontak yang disimpan di browser ini. Nama, email,
+                        nomor, dan pesan tidak disimpan.
+                    </p>
+                    <div class="preferensi-actions">
+                        <button type="button" id="simpan-preferensi">Simpan Preferensi</button>
+                        <button type="button" id="hapus-preferensi" class="button-secondary">Hapus Preferensi</button>
+                    </div>
+                    <p id="preferensi-feedback" class="form-feedback" aria-live="polite"></p>
+                </aside>
+
+                <section class="side-card" aria-labelledby="newsletter-title">
+                    <h2 id="newsletter-title">Newsletter Kopi Nusa</h2>
+                    <p class="field-hint">Dapatkan info promo dan menu musiman. Hanya pilihan ini yang disimpan, tanpa email.</p>
+                    <label class="newsletter-option" for="newsletter-optin">
+                        <input id="newsletter-optin" type="checkbox" />
+                        Saya ingin menerima info promo
+                    </label>
+                    <p id="newsletter-feedback" class="form-feedback" aria-live="polite"></p>
+                </section>
             </div>
 
-            <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
-            <div class="field">
-                <label for="telepon">Nomor WhatsApp</label>
-                <input id="telepon" name="telepon" type="tel" autocomplete="tel" inputmode="numeric" pattern="0[0-9]{9,12}" title="Awali dengan 0, 10-13 digit, tanpa spasi atau tanda hubung" placeholder="081234567890"
-                    aria-describedby="telepon-hint" />
-                <p id="telepon-hint" class="field-hint">
-                    Opsional. Isi tanpa spasi atau tanda hubung, contoh: 081234567890.
-                </p>
-            </div>
-
-            <div class="field">
-                <label for="paket">Paket yang diminati</label>
-                <select id="paket" name="paket" required>
-                    <option value="">Pilih paket</option>
-                    <option value="rumahan">Paket rumahan</option>
-                    <option value="kantor">Paket kantor</option>
-                    <option value="reseller">Paket reseller</option>
-                </select>
-            </div>
-
-            <fieldset class="field-group">
-                <legend>Topik pertanyaan</legend>
-                <label><input type="radio" name="topik" value="produk" required />
-                    Informasi produk</label>
-                <label><input type="radio" name="topik" value="pesanan" /> Status
-                    pesanan</label>
-                <label><input type="radio" name="topik" value="kerja-sama" /> Kerja
-                    sama</label>
-            </fieldset>
-
-            <fieldset class="field-group field-group-grid">
-                <legend>Waktu Kontak</legend>
-                <label><input type="radio" name="waktu" value="pagi" /> Pagi (08.00 -
-                    11.00)</label>
-                <label><input type="radio" name="waktu" value="siang" /> Siang (11.00 -
-                    15.00)</label>
-                <label><input type="radio" name="waktu" value="sore" /> Sore (15.00 -
-                    18.00)</label>
-                <label><input type="radio" name="waktu" value="kapan-saja" checked />
-                    Kapan saja</label>
-            </fieldset>
-
-            <div class="field">
-                <label for="pesan">Pesan</label>
-                <textarea id="pesan" name="pesan" rows="5" required minlength="10"></textarea>
-            </div>
-
-            <div class="form-actions">
-                <button type="submit">Tampilkan Preview</button>
-                <button type="reset" class="button-secondary">Reset Form</button>
-            </div>
-        </form>
-
-        <section class="preview-section" aria-labelledby="preview-title">
-            <h2 id="preview-title">Preview Data</h2>
-            <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol dikirim.</pre>
-        </section>
-
+        </div>
     </main>
 
     <footer class="site-footer">
